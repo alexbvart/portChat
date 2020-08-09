@@ -1,0 +1,39 @@
+D:\COMUNICACION DE DATOS TRUJILLO\LABTRUJILLO\winproySerialPort\winproySerialPort\bin\Debug\winproySerialPort.exe.config
+D:\COMUNICACION DE DATOS TRUJILLO\LABTRUJILLO\winproySerialPort\winproySerialPort\bin\Debug\winproySerialPort.exe
+D:\COMUNICACION DE DATOS TRUJILLO\LABTRUJILLO\winproySerialPort\winproySerialPort\bin\Debug\winproySerialPort.pdb
+D:\COMUNICACION DE DATOS TRUJILLO\LABTRUJILLO\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csprojAssemblyReference.cache
+D:\COMUNICACION DE DATOS TRUJILLO\LABTRUJILLO\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.Form1.resources
+D:\COMUNICACION DE DATOS TRUJILLO\LABTRUJILLO\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.Properties.Resources.resources
+D:\COMUNICACION DE DATOS TRUJILLO\LABTRUJILLO\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csproj.GenerateResource.cache
+D:\COMUNICACION DE DATOS TRUJILLO\LABTRUJILLO\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csproj.CoreCompileInputs.cache
+D:\COMUNICACION DE DATOS TRUJILLO\LABTRUJILLO\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.exe
+D:\COMUNICACION DE DATOS TRUJILLO\LABTRUJILLO\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.pdb
+D:\1desconprimirdo\UNT\comunicacion\s3\winproySerialPort\winproySerialPort\bin\Debug\winproySerialPort.exe.config
+D:\1desconprimirdo\UNT\comunicacion\s3\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.exe
+D:\1desconprimirdo\UNT\comunicacion\s3\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.pdb
+D:\1desconprimirdo\UNT\comunicacion\s3\winproySerialPort\winproySerialPort\bin\Debug\winproySerialPort.exe
+D:\1desconprimirdo\UNT\comunicacion\s3\winproySerialPort\winproySerialPort\bin\Debug\winproySerialPort.pdb
+D:\1desconprimirdo\UNT\comunicacion\s3\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csprojResolveAssemblyReference.cache
+D:\1desconprimirdo\UNT\comunicacion\s3\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.Form1.resources
+D:\1desconprimirdo\UNT\comunicacion\s3\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.Properties.Resources.resources
+D:\1desconprimirdo\UNT\comunicacion\s3\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csproj.GenerateResource.Cache
+C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\bin\Debug\winproySerialPort.exe.config
+C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.exe
+C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.pdb
+C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\bin\Debug\winproySerialPort.exe
+C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\bin\Debug\winproySerialPort.pdb
+C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.Form1.resources
+C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.Properties.Resources.resources
+C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csproj.GenerateResource.Cache
+D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\bin\Debug\winproySerialPort.exe.config
+D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.exe
+D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\bin\Debug\winproySerialPort.exe
+D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\bin\Debug\winproySerialPort.pdb
+D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csprojAssemblyReference.cache
+D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.Form1.resources
+D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.Properties.Resources.resources
+D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csproj.GenerateResource.cache
+D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csproj.CoreCompileInputs.cache
+D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.pdb
+C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csprojAssemblyReference.cache
+C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csproj.CoreCompileInputs.cache
