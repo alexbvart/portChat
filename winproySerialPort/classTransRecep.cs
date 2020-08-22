@@ -42,6 +42,7 @@ namespace winproySerialPort
         private string mensRecibido;
 
         private Boolean BufferSalidaVacio;
+        private bool hiloBuffer;
 
         //-----Tramas de envio
         byte[] TramaEnvio;
@@ -56,6 +57,7 @@ namespace winproySerialPort
             TramCabeceraEnvio = new byte[5];
             tramaRelleno = new byte[1024];
             TramaRecibida = new byte[1024];
+            hiloBuffer = true;
 
 
             for (int i = 0; i <= 1023; i++)
@@ -101,6 +103,13 @@ namespace winproySerialPort
             }
             //MessageBox.Show("apertura del puerto " + puerto.PortName);
         }
+        public void closeConnection() {
+            this.hiloBuffer = false;
+        }
+
+
+
+
         public void Finaliza()
         {
             try
@@ -202,25 +211,19 @@ namespace winproySerialPort
 
         private void verificandoSalida()//indica si buffer esta vacio
         {
-            while(true){
-                if (puerto.BytesToWrite>0)
-	            {
-		             //Buffer de salida no vacio
-                    BufferSalidaVacio=false;
-	            }
-                else
-	            {
-                    BufferSalidaVacio=true;
-	            }
+            while(hiloBuffer){              	                              
+                BufferSalidaVacio = puerto.BytesToWrite == 0;
+                Thread.Sleep(10);
             }
         }
 
         public int BytesPorSalir(){
             int cantBytes= 0; //cantidadBytesPorSalir
-            if (BufferSalidaVacio==false)
+            if (BufferSalidaVacio)
 	        {
 		        cantBytes = puerto.BytesToWrite;
-	        }return cantBytes;
+	        }
+            return cantBytes;
         }
 
 
@@ -266,7 +269,7 @@ namespace winproySerialPort
                 LeyendoArchivo.Read(TramaEnvioArchivo, 0, 1019);    //                :: envio de ina trama entera de 1019
                 archivoaEnviar.avance = archivoaEnviar.avance + 1019;
                 
-                while (BufferSalidaVacio == false)
+                while (!BufferSalidaVacio)
                 {   //no hacemos nada hasta que este vacio
                 }
                 puerto.Write(TramaCabeceraEnvioArchivo, 0, 5);
@@ -277,13 +280,13 @@ namespace winproySerialPort
             //------ enviamos la colita
             int colita = Convert.ToInt16((archivoaEnviar.tamaño - archivoaEnviar.avance));
             LeyendoArchivo.Read(TramaEnvioArchivo, 0, colita);     //                :: envio de ina trama colita
-            while (BufferSalidaVacio == false)
+            while (!BufferSalidaVacio)
             {   //no hacemos nada hasta que este vacio
             }
             puerto.Write(TramaCabeceraEnvioArchivo, 0, 5);
             puerto.Write(TramaEnvioArchivo, 0, colita);             //                :: mensaje como tal
             puerto.Write(tramaRelleno, 0, 1019 - colita);           //                :: rellena los espacios vacios 
-            MessageBox.Show($"avance: {archivoaEnviar.avance}+{colita}=" + (archivoaEnviar.avance + colita));
+            //MessageBox.Show($"avance: {archivoaEnviar.avance}+{colita}=" + (archivoaEnviar.avance + colita));
 
             LeyendoArchivo.Close();
             FlujoArchivoEnviar.Close();
@@ -297,7 +300,8 @@ namespace winproySerialPort
 
             archivoaRecibir.nombre = nombreArchivo;
             archivoaRecibir.numero = 1;
-            archivoaRecibir.tamaño = 31831;//tamaño;//31831; //FlujoArchivoRecibir.Length;
+            archivoaRecibir.tamaño = 31831;
+            //tamaño;//31831; //FlujoArchivoRecibir.Length;
             //archivoaRecibir.avance = 0;
         }
 
@@ -307,16 +311,15 @@ namespace winproySerialPort
             {
                 EscribiendoArchivo.Write(TramaRecibida, 5, 1019);
                 archivoaRecibir.avance = archivoaRecibir.avance + 1019;
-                MessageBox.Show($"avance-CONSTRUCCION: {archivoaRecibir.avance} de {archivoaRecibir.tamaño}");
+               // MessageBox.Show($"avance-CONSTRUCCION: {archivoaRecibir.avance} de {archivoaRecibir.tamaño}");
             }
             else
             {
                 int colita = Convert.ToInt16((archivoaRecibir.tamaño - archivoaRecibir.avance));
                 EscribiendoArchivo.Write(TramaRecibida, 5, colita);
-
                 EscribiendoArchivo.Close();
                 FlujoArchivoRecibir.Close();
-                MessageBox.Show($"CONSTRUIDO: {archivoaRecibir.avance}+{colita}=" + (archivoaRecibir.avance + colita));
+                //MessageBox.Show($"CONSTRUIDO: {archivoaRecibir.avance}+{colita}=" + (archivoaRecibir.avance + colita));
             }
         }
     }
