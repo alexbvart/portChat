@@ -35,5 +35,6 @@ D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\obj\De
 D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csproj.GenerateResource.cache
 D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csproj.CoreCompileInputs.cache
 D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.pdb
+C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.frmBienvenido.resources
 C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csprojAssemblyReference.cache
 C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csproj.CoreCompileInputs.cache

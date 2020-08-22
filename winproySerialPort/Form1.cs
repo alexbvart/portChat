@@ -17,9 +17,34 @@ namespace winproySerialPort
        delegate void MostrarOtroProceso(string mensaje);
        MostrarOtroProceso delegadoMostrar;
 
+       
         public Form1()
         {
             InitializeComponent();
+           
+        }
+
+        public Form1(string puerto, string velocidad)
+        {
+            InitializeComponent();
+            lblInicio.Text = $"Puerto {puerto}";
+            lblConexcionMsg.Text = "rateBaudios: " + velocidad;
+
+            //-------------
+            //string prtName = cmbPuerto.Text;
+            //int vld = Convert.ToInt32(cmbvelocidad.Text);
+            int baudioRate = Convert.ToInt32(velocidad);
+
+            //lblInicio.Text = $"Puerto {prtName}";
+            //lblConexcionMsg.Text = "rateBaudios: " + vld;
+
+
+            objTxRx = new classTransRecep();
+            objTxRx.Inicializa(puerto, baudioRate);
+            objTxRx.LlegoMensaje += new classTransRecep.HandlerTxRx(objTxRx_LlegoMensaje);
+            delegadoMostrar = new MostrarOtroProceso(MostrandoMensaje);
+            MostrandoMensaje(this.rchMensajes.Text); //envio mi mensajito
+
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
@@ -27,11 +52,12 @@ namespace winproySerialPort
             int envio = rchMensajes.Text.Length;
             if (envio > 0)
             {
-                objTxRx.Enviar(rchMensajes.Text.Trim());
+                //string seenvia = "Recibido:\n" + rchMensajes.Text.Trim();
+                objTxRx.Enviar("\nRecibido:\n" + rchMensajes.Text.Trim());//recibo mi mensajito
                 //rchMensajes = HorizontalAlignment.Left;
                 //rchConversacion.ForeColor = Color.Blue;
 
-                MostrandoMensaje("Saliente:\n" + this.rchMensajes.Text); //envio mi mensajito
+                MostrandoMensaje("\nEnviado:\n" + this.rchMensajes.Text); //envio mi mensajito
                 rchMensajes.Text = ""; //limpa para enviar nuevo mensaje  
             }
             else
@@ -40,6 +66,7 @@ namespace winproySerialPort
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             int[] velocidades = {110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200, 128000 , 256000};
             foreach (var velocidad in velocidades)
             {cmbvelocidad.Items.Add(velocidad);}
@@ -58,44 +85,20 @@ namespace winproySerialPort
         //muestra el menaje en el rich -- addMessageToChat
         private void MostrandoMensaje(string textMens /*,string user*/)
         {
-            //InsertarMensaje(this.txtMessage.Text, "Me");
-            rchConversacion.Text += "\n\n" + textMens;
-        }
-        private void InsertarMensaje(string textMens ,string user)
-        {
-
-            if (textMens != "")
-            {
-                if (rchConversacion.Text == "")
-                {
-                    rchConversacion.Text = "[" + user + "]\n" + textMens;
-                }
-                else
-                {
-                    rchConversacion.Text += "\n\n" + user + "\n" + textMens;
-                }
-            }
-
-        }
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
+             rchConversacion.Text += "\n"+ textMens;
         }
 
-        
-        private void rchConversacion_TextChanged(object sender, EventArgs e)
-        {
-            // this.addMessageToChat(message, "Receive");
-            rchConversacion.SelectionStart = rchConversacion.TextLength;
-            rchConversacion.ScrollToCaret();
-        }
-
-        
+        // Nos conectamos del puerto
         private void btnConectar_Click(object sender, EventArgs e)
         {
+            //frmBienvenido frmbien = new frmBienvenido();
+            //string txtport = frmbien.txtpuerto.Text ;
+
             string prtName = cmbPuerto.Text;
             int vld = Convert.ToInt32(cmbvelocidad.Text);
-            lblConexcionMsg.Text = "Conectado al puerto: " + prtName + " rateBaudios: " + vld;
+
+            lblInicio.Text = $"Puerto {prtName}";
+            lblConexcionMsg.Text = "rateBaudios: " + vld;
 
 
             objTxRx = new classTransRecep();
@@ -110,19 +113,59 @@ namespace winproySerialPort
         {
             objTxRx.Finaliza();
             lblConexcionMsg.Text = "Sin Conexion";
+            //this.Close();
         }
 
-        //Form config = new frmConfig();
-        // config.Show();
+        //sacroll del rich
+        private void rchConversacion_TextChanged(object sender, EventArgs e)
+        {
+            // this.addMessageToChat(message, "Receive");
+            rchConversacion.SelectionStart = rchConversacion.TextLength;
+            rchConversacion.ScrollToCaret();
+        }
+
         private void cmbPuerto_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
         private void cmbvelocidad_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnEnviaArchivo_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                string rutaArchivo = string.Empty;
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //File name devuelve el nombre.. la ruta del archivo
+                    rutaArchivo = openFileDialog.FileName;
+                }
+                objTxRx.IniciaEnvioArchivo(rutaArchivo);
+                //objTxRx.IniciaEnvioArchivo("C:\\Users\\BRIONES\\Downloads\\Rectangle 25.png");
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
+        private void btnRecibirArchivo_Click(object sender, EventArgs e)
+        {
+            objTxRx.InicioConstruirArchivo("C:\\Users\\BRIONES\\Downloads\\ccopia.png", 0, 1);
+        }
+        //sin comentarios
+        //Form config = new frmConfig();
+        // config.Show();
     }
 }
