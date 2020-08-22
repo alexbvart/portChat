@@ -162,7 +162,14 @@ namespace winproySerialPort
 
         private void btnRecibirArchivo_Click(object sender, EventArgs e)
         {
-            objTxRx.InicioConstruirArchivo("C:\\Users\\BRIONES\\Downloads\\ccopia.png", 0, 1);
+            objTxRx.InicioConstruirArchivo("ccopia.png", 0, 1);
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (this.objTxRx != null) this.objTxRx.closeConnection();
+
+
         }
         //sin comentarios
         //Form config = new frmConfig();

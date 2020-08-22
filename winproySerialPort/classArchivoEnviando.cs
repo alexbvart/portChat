@@ -14,10 +14,5 @@ namespace winproySerialPort
         public long tamaño { get; set; }
         public long avance { get; set; }
         public Boolean activo { get; set; }
-
-
-
-
-
     }
 }

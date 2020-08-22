@@ -38,3 +38,14 @@ D:\1desconprimirdo\UNT\comunicacion\4\winproySerialPort\winproySerialPort\obj\De
 C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.frmBienvenido.resources
 C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csprojAssemblyReference.cache
 C:\Users\BRIONES\Desktop\winproySerialPort\winproySerialPort\obj\Debug\winproySerialPort.csproj.CoreCompileInputs.cache
+C:\Users\User0\source\repos\portChat\winproySerialPort\bin\Debug\winproySerialPort.exe.config
+C:\Users\User0\source\repos\portChat\winproySerialPort\bin\Debug\winproySerialPort.exe
+C:\Users\User0\source\repos\portChat\winproySerialPort\bin\Debug\winproySerialPort.pdb
+C:\Users\User0\source\repos\portChat\winproySerialPort\obj\Debug\winproySerialPort.csprojAssemblyReference.cache
+C:\Users\User0\source\repos\portChat\winproySerialPort\obj\Debug\winproySerialPort.Form1.resources
+C:\Users\User0\source\repos\portChat\winproySerialPort\obj\Debug\winproySerialPort.frmBienvenido.resources
+C:\Users\User0\source\repos\portChat\winproySerialPort\obj\Debug\winproySerialPort.Properties.Resources.resources
+C:\Users\User0\source\repos\portChat\winproySerialPort\obj\Debug\winproySerialPort.csproj.GenerateResource.cache
+C:\Users\User0\source\repos\portChat\winproySerialPort\obj\Debug\winproySerialPort.csproj.CoreCompileInputs.cache
+C:\Users\User0\source\repos\portChat\winproySerialPort\obj\Debug\winproySerialPort.exe
+C:\Users\User0\source\repos\portChat\winproySerialPort\obj\Debug\winproySerialPort.pdb
